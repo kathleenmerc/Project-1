@@ -16,16 +16,11 @@ body {
     position:relative;
 } */
 
-/* Instead, made a container with same width and height as canvas */
+/* Instead, I made a container with same width and height as my canvas */
 #container {
     position:relative;
     width: 800px;
     height: 600px;
-}
-
-
-.hidden {
-    display: none;
 }
 
 button {
@@ -37,6 +32,9 @@ button {
     width: 150px;
 }
 
+.hidden {
+    display: none;
+}
 
 #onePlayerBtn {
     position: absolute;
@@ -52,16 +50,17 @@ button {
     transform: translate(-50%, -50%);
 }
 
-#nextBtn {
+#nextBtn, #gameNextBtn {
     position: absolute;
     top: 85%;
     left: 88%;
     transform: translate(-50%, -50%);
 }
 
-#playBtn {
+#playBtn, #playAgainBtn {
     position: absolute;
     top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
