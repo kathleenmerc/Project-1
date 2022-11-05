@@ -35,8 +35,37 @@ function updateObstacles() {
 }
 
 
-function drawScore() {
-    ctx.fillText(`player score: ${playerScore}`, 110, 100)
+function drawCurrentScore() {
+    ctx.fillStyle = "white"
+    ctx.font = "20px Courier"
+    ctx.textAlign = "center"
+    ctx.fillText(`Score: ${playerScore}`, 110, 30)
+}
+
+function drawHighScore() {
+    ctx.fillStyle = "white"
+    ctx.font = "20px Courier"
+    ctx.textAlign = "center"
+    ctx.fillText(`High score: ${highScore}`, 650, 30)
+}
+
+function drawFinalScores() {
+    ctx.fillStyle = "white"
+    ctx.font = "20px Courier"
+    ctx.textAlign = "center"
+    ctx.fillText("Player 1:", canvas.width / 2, 90)
+    ctx.fillText(`Round 1: ${scoresArray[0]}`, canvas.width / 2, 110)
+    ctx.fillText(`Round 2: ${scoresArray[1]}`, canvas.width / 2, 130)
+    ctx.fillText(`Round 3: ${scoresArray[2]}`, canvas.width / 2, 150)
+}
+
+
+
+function drawWinningScore() {
+    ctx.fillStyle = "white"
+    ctx.font = "20px Courier"
+    ctx.textAlign = "center"
+    ctx.fillText(`Winning score: ${winningScore}`, canvas.width / 2, 170)
 }
 
 function increaseScore() {
@@ -46,9 +75,14 @@ function increaseScore() {
 }
 
 function drawLives() {
-    ctx.font = "16px courier";
-    ctx.fillStyle = "white";
-    ctx.fillText(`Lives: ${redHeli.lives}`, 110, 150);
+    ctx.fillStyle = "white"
+    ctx.font = "20px Courier"
+    ctx.textAlign = "center"
+    if (mode === "1player" || (mode === "2players" && redHeli.lives > 0)){
+        ctx.fillText(`Lives: ${redHeli.lives}`, canvas.width / 2, 30);
+    } else {
+        ctx.fillText(`Lives: ${blueHeli.lives}`, canvas.width / 2, 30);
+    }
 }
 
 
@@ -75,10 +109,18 @@ function mouseupHandler() {
 function controlHeli() {
     //console.log("control heli test")
 
-    if (mouseIsPressed) {
-        redHeli.y += -3 // remember in canvas (0,0) is top left corner so the greater the y value the lower on the canvas it is
-    } else if (mouseIsPressed === false) {
-        redHeli.y += 3
+    if (mode === "1player" || (mode === "2players" && redHeli.lives > 0)) {
+        if (mouseIsPressed) {
+            redHeli.y += -3 // remember in canvas (0,0) is top left corner so the greater the y value the lower on the canvas it is
+        } else {
+            redHeli.y += 3
+        }
+    } else {
+        if (mouseIsPressed) {
+            blueHeli.y += -3
+        } else { 
+            blueHeli.y += 3
+        }
     }
 }
 
@@ -86,11 +128,20 @@ function controlHeli() {
 
 function drawCircle() {
     // Circle around Helicopter
-    ctx.strokeStyle = "red";
-    ctx.lineWidth = 5;
-    ctx.beginPath();
-    ctx.arc(240, 270, 60, 0, 2 * Math.PI);
-    ctx.stroke();
+
+    if (mode === "2players" && redHeli.lives === 0) {
+        ctx.strokeStyle = "blue";
+        ctx.lineWidth = 5;
+        ctx.beginPath()
+        ctx.arc(blueHeli.x + blueHeli.w / 2, blueHeli.y + blueHeli.h / 2 , 60, 0, 2 * Math.PI)
+        ctx.stroke();
+    } else {
+        ctx.strokeStyle = "red";
+        ctx.lineWidth = 5;
+        ctx.beginPath()
+        ctx.arc(redHeli.x + redHeli.w / 2, redHeli.y + redHeli.h / 2 , 60, 0, 2 * Math.PI)
+        ctx.stroke();
+    }
 }
 
 
@@ -119,6 +170,7 @@ function moveObstacles() {
 
 // Reset the game from the beginning
 function resetGame () {
+
     // Reset Background and Borders
     drawBorders()
 
@@ -129,6 +181,7 @@ function resetGame () {
     // Reset redHeli
     redHeli.updateHeli()
     redHeli.drawHeli(redHeliImg)
+    blueHeli.updateHeli()
 
     // Buttons
     playAgainBtn.classList.add("hidden")
@@ -138,5 +191,35 @@ function resetGame () {
     mode;
     playerScore = 0
     redHeli.lives = 3
+    scoresArray = []
     state = "opening"
+}
+
+
+
+function checkWinningScore() {
+    winningScore = Math.max(...scoresArray) // this will find highest number in scoresArray
+}
+
+
+
+function checkHighScore() {
+    if (playerScore >= highScore) {
+        highScore = playerScore
+        localStorage.setItem(saveHighScore, highScore) // this will add new highScore to local storage
+    }
+}
+
+
+// Checking for collisions
+function checkCollisionsBorders() {
+    if (mode === "1player" || (mode === "2players" && redHeli.lives > 0)) {
+        if ((redHeli.y < 50) || (redHeli.y + redHeli.h > canvas.height - 50)) {
+            state = "crash"
+        }
+    } else if (mode === "2players" && redHeli.lives === 0) {
+        if ((blueHeli.y < 50) || (blueHeli.y + blueHeli.h > canvas.height - 50)) {
+            state = "crash"
+        }
+    }
 }
