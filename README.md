@@ -40,8 +40,8 @@ Visit my GitHub pages to view the game in the browser:
 ## Resources
 
 I referred to Colin Veldkamp's starter code to help me organize and begin coding my game.  
-[Colin Veldkamp's link to starter code](https://github.com/mrveldkamp-startcode/helicopter-game-start) . 
-I also used various resources (including Google, MDN, W3Schools, YouTube, etc) to learn more about HTML Canvas, aniimation, collision detection functions, and how to use local storage.
+[Colin Veldkamp's link to starter code](https://github.com/mrveldkamp-startcode/helicopter-game-start)   
+I also used various resources (including Google, MDN, W3Schools, YouTube, etc) to learn more about HTML Canvas, animation, collision detection functions, and how to use local storage.
 
 
 ## Shoutouts
