@@ -10,13 +10,13 @@ body {
     
 }
 
-
 /* Need to make canvas position relative and buttons absolute to overlay buttons on top of canvas 
 #myCanvas {
     position:relative;
 } */
 
 /* Instead, I made a container with same width and height as my canvas */
+
 #container {
     position:relative;
     width: 800px;
