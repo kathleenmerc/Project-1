@@ -1,16 +1,15 @@
 # The Helicopter Game
 
 This is my version of the classic Helicopter Game.  
-
-[Click here to see a video of the original game](https://www.youtube.com/watch?v=v7xjPxV4kd4)
-
-<img src="images/helicopter-flash-game_screenshot.png" width="500">
-
 My version is built using HTML, CSS, HTML Canvas, and JavaScript.  
 The object of the game is to fly the helicopter without crashing into obstacles along the path.  
 The game is be controlled using a left mouse button hold/release function.  
 It can be played by 1 or 2 players, and each player scores points based on the distance they fly the helicopter without crashing into an obstacle.  
 Each player has a certain number of lives, and once all lives are used up, the player with the highest score wins.  
+
+[Click here to see a video of the original game](https://www.youtube.com/watch?v=v7xjPxV4kd4)
+
+<img src="images/helicopter-flash-game_screenshot.png" width="500">
 
 
 ## Installation
