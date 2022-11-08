@@ -448,9 +448,9 @@ function moveObstacles() {
     }   else if (playerScore % 100 === 0) {
         // console.log("updating speed")
         distanceBetweenObstacles -= 10
-        obstacle1.x += 3
-        obstacle2.x += 3
-        obstacle3.x += 3
+        obstacle1.x += -3
+        obstacle2.x += -3
+        obstacle3.x += -3
         //console.log("distance between: " + distanceBetweenObstacles)
     }
 
