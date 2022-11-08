@@ -1,15 +1,16 @@
 # The Helicopter Game
 
-This is my version of the classic Helicopter Game.
-[Click here to see video of original game](https://www.youtube.com/watch?v=v7xjPxV4kd4)
+This is my version of the classic Helicopter Game.  
 
-[classic-helicopter-game-screenshot](https://archive.org/serve/helicopter-flash-game/helicopter-flash-game_screenshot.png)
+[Click here to see a video of the original game](https://www.youtube.com/watch?v=v7xjPxV4kd4)
 
-My version is built using HTML, CSS, and JavaScript.
-The object of the game is to fly the helicopter without crashing into obstacles along the path.
-The game will be controlled using a left mouse button hold/release function.
-It can be played by 1 or 2 players, and each player will score points based on the distance they can fly the helicopter without crashing into an obstacle.
-Each player will have a certain number of lives, and once all lives are used up, the player with the highest score wins.
+![classic-helicopter-game-screenshot](images/helicopter-flash-game_screenshot.png) . 
+
+My version is built using HTML, CSS, and JavaScript.  
+The object of the game is to fly the helicopter without crashing into obstacles along the path.  
+The game will be controlled using a left mouse button hold/release function.  
+It can be played by 1 or 2 players, and each player will score points based on the distance they can fly the helicopter without crashing into an obstacle.  
+Each player will have a certain number of lives, and once all lives are used up, the player with the highest score wins.  
 
 
 ## Installation
@@ -38,12 +39,12 @@ Visit my GitHub pages to view the game in the browser:
 
 ## Resources
 
-I referred to Colin Veldkamp's starter code to help me organize and begin coding my game.
-[Colin Veldkamp's link to starter code](https://github.com/mrveldkamp-startcode/helicopter-game-start)
+I referred to Colin Veldkamp's starter code to help me organize and begin coding my game.  
+[Colin Veldkamp's link to starter code](https://github.com/mrveldkamp-startcode/helicopter-game-start) . 
 I also used various resources (including Google, MDN, W3Schools, YouTube, etc) to learn more about HTML Canvas, aniimation, collision detection functions, and how to use local storage.
 
 
 ## Shoutouts
 
-Shout out to my brother and cousins, who would play this game endlessly with me back in the day.
+Shout out to my brother and cousins, who would play this game endlessly with me back in the day.  
 And a big Thank You to my Instructors and Peers at Per Scholas for your guidance, input, and support!
