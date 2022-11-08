@@ -22,6 +22,7 @@ Visit my GitHub pages to view the game in the browser:
 
 - 1 or 2 player functionality
 - Included buttons to direct user play
+- Added an Instructions screen
 - Each player has 3 lives
 - The winning score is calculated between all scores in each round
 
