@@ -25,7 +25,6 @@ Visit my GitHub pages to view the game in the browser:
 - Included buttons to direct user play
 - Each player has 3 lives
 - The winning score is calculated between all scores in each round
-- Displays an all time high score using local storage
 
 
 ## Ideas and Features to work on 
